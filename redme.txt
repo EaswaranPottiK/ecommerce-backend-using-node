@@ -1,0 +1,29 @@
+Target 1 hr 
+I have installed modules 
+npm install express mongoose dotenv nodemon
+
+to use .env
+const dotenv = require('dotenv')
+dotenv.config();
+
+
+Issues i had faced
+for mongo db instead of localhost type 0.0.0.0
+
+to add a details in db
+    const newUser = new userModel(req.body)
+    newUser.save();
+
+why use hashing - it a one way process - only from plain text to cypher text and not other way 
+
+bcrypt - library to hash passwords
+first you need to generate salt and then generate hash using salt 
+note each time salt and hash generated different salt and hash is generated 
+
+everytime you generate hash for same text => hash generated is different 
+
+study aggregartion framework in mongo db
+
+next 08/03 at 31.35
+
+syntax of mongo db
