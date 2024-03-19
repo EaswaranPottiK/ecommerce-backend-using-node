@@ -39,5 +39,6 @@ a token consists of differnt part like - header, payload,
 to create jwt key i have written a variable jwt-secret-key with a random value
 
 jwt.sign( paylod, scret key)
-secret key is for encoding (not encypted)
+secret key is for encoding (not encypted): if decoding is easy by just visiting jwt.io website then why use it - 
+while using special character you may face error - to avoid this issue we ecoding it 
 note : iat issued at time will be automatically added 
