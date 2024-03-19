@@ -24,6 +24,20 @@ everytime you generate hash for same text => hash generated is different
 
 study aggregartion framework in mongo db
 
-next 08/03 at 31.35
+next 08/03 at 1:02
 
 syntax of mongo db
+
+token - to perform authentication and autherisation 
+token can be of different types - one popular one is JWT (json web token)
+jwt.io is the offical website npm install jsonwebtoken
+a token consists of differnt part like - header, payload, 
+1) header contains metadata like type JWT, algo used for encryption
+2) payload - actual data ie user info - name, admin, issued time and session expiry time
+3) Sinature 
+
+to create jwt key i have written a variable jwt-secret-key with a random value
+
+jwt.sign( paylod, scret key)
+secret key is for encoding (not encypted)
+note : iat issued at time will be automatically added 

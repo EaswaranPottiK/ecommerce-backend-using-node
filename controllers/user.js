@@ -1,5 +1,8 @@
 const userModel = require('../models/user')
 const bcrypt = require('bcrypt')
+const jwt = require('jsonwebtoken')
+const dotenv = require('dotenv')
+dotenv.config();
 
 const userRegistration = async(req,res) =>{
     //to increase complexity, i have used salt 
@@ -41,9 +44,16 @@ const userLogin = async(req,res) =>{
             message:"Username or password is Invalid",
         })
     }
+    const payload = {
+        name: user.firstName,
+        role: user.role,
+        exp: Math.floor((new Date().getTime())/1000) +36000 //this is called unix time or epoch time - time in sec + 1 hr 
+    }
+    const token = jwt.sign(payload,process.env.JWT_SECRET_KEY)
     return res.json({
         success:true,
         message:"User Logged in successfully",
+        token:token
     });
 }
 
